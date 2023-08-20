@@ -1,0 +1,720 @@
+:root {
+    --blue-color: #0075ff;
+    --blue-alt-color: #0d69d5;
+    --orange-color: #f59e0b;
+    --green-color: #22c55e;
+    --red-color: #f44336;
+    --grey-color: #888;
+}
+
+* {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+input::placeholder {
+    font-size: 13px;
+}
+
+input:focus {
+    outline: none;
+}
+
+textarea:focus {
+    outline: none;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    width: 100%;
+
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: white;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--blue-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--blue-alt-color);
+}
+
+
+.container {
+    padding: 0 15px;
+    margin: 0px auto;
+
+}
+
+@media (min-width : 667px) {
+    .container {
+        width: 750px;
+    }
+}
+
+@media (min-width : 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+@media (min-width : 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.body {
+    display: flex;
+    background-color: #f1f5f9;
+    min-height: 100vh;
+}
+
+/* nav */
+.nav {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 250px;
+    box-shadow: 0 0 10px #ddd;
+    padding: 20px;
+    background-color: white;
+}
+
+.nav h3.logo {
+    margin-bottom: 50px;
+    text-align: center;
+    position: relative;
+}
+
+.nav h3.logo::before {
+    content: "";
+    position: absolute;
+    background-color: black;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 1.5px;
+    bottom: -20px;
+}
+
+.nav h3.logo::after {
+    content: "";
+    position: absolute;
+    bottom: -29px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 4px solid white;
+    background-color: black;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav ul {
+    margin-bottom: 16px;
+}
+
+.nav ul li a {
+    transition: 0.3s;
+    margin-bottom: 9px;
+    color: black;
+    font-size: 14px;
+    border-radius: 6px;
+    padding: 10px;
+    display: flex;
+}
+
+.nav ul li a.active {
+    background-color: #f6f6f6;
+}
+
+.nav ul li a:hover {
+    background-color: #f6f6f6;
+}
+
+.nav ul li a span {
+    font-size: 14px;
+    margin-left: 10px;
+    font-weight: 500;
+}
+
+.content {
+    width: 100%;
+}
+
+.content .padding {
+    background-color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content .padding input {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-left: 5px;
+    width: 160px;
+    transition: width 0.3s;
+    padding: 10px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    font-size: 13px;
+}
+
+.content .padding input:focus {
+    width: 200px;
+}
+
+.content .padding .ser {
+    position: relative;
+}
+
+.content .padding .ser::before {
+    font-family: var(--fa-style-family-classic);
+    content: "\f002";
+    font-weight: 900;
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: var(--grey-color);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+}
+
+.content .padding input:focus::placeholder {
+    opacity: 0;
+}
+
+.content .padding input::placeholder {
+    font-size: 13px;
+    font-weight: 500;
+    padding-bottom: 2px;
+}
+
+.content .padding .noti {
+    display: flex;
+}
+
+.content .padding .noti img {
+    width: 32px;
+    height: 32px;
+    margin-left: 15px;
+}
+
+.content .padding .noti span {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.content .padding .noti i {
+    position: relative;
+}
+
+.content .padding .noti span::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: var(--red-color);
+    border-radius: 50%;
+    right: -5px;
+    top: 0px;
+}
+
+.content .heading {
+    margin: 20px 20px 40px;
+    position: relative;
+}
+
+.content .heading::after {
+    content: "";
+    height: 3px;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    background-color: white;
+    width: 120px;
+}
+
+.content .heading::before {
+    content: "";
+    height: 3px;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    background-color: black;
+    width: 40px;
+    z-index: 2;
+}
+
+/* nav */
+
+.dashcont {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    grid-gap: 20px;
+}
+
+.serv {
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: white;
+    padding: 20px;
+}
+
+.dashcont .intro {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dashcont .text h2 {
+    margin-bottom: 10px;
+}
+
+.dashcont .text p {
+    margin-top: 5px;
+    color: var(--grey-color);
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.cotn .control {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.cotn .control .txt {
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+}
+
+.cotn .control .txt p {
+    font-size: 13px;
+    color: var(--grey-color);
+    margin-top: 5px;
+}
+
+label input.checkbox {
+    -webkit-appearance: none;
+    appearance: none;
+    display: none;
+}
+
+.toggle-form {
+    background-color: #ccc;
+    width: 78px;
+    height: 32px;
+    border-radius: 16px;
+    position: relative;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.toggle-form::before {
+    font-family: var(--fa-style-family-classic);
+    content: "\f00d";
+    font-weight: 900;
+    background-color: white;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    border-radius: 50%;
+    top: 4px;
+    left: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #aaa;
+    transition: 0.3s;
+}
+
+label input.checkbox:checked+.toggle-form {
+    background-color: var(--blue-color);
+}
+
+label input.checkbox:checked+.toggle-form::before {
+    color: var(--blue-color);
+    content: "\f00c";
+    left: 50px;
+}
+
+textarea.close {
+    border: 1px solid #ccc;
+    resize: none;
+    min-height: 150px;
+    width: 100%;
+    border-radius: 6px;
+    padding: 10px;
+    display: block;
+}
+
+.conte .lab {
+    margin-bottom: 15px;
+}
+
+.conte .lab label {
+    font-size: 14px;
+    color: var(--grey-color);
+    margin-bottom: 10px;
+    display: block;
+}
+
+.conte .lab .type {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 10px;
+    display: block;
+}
+
+.conte .lab .typed {
+    cursor: no-drop;
+    background-color: #f0f4f8;
+    color: #bbb;
+    display: inline-flex;
+    width: calc(100% - 80px);
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-right: 10px;
+    padding: 10px;
+}
+
+.c-blue {
+    color: var(--blue-color);
+}
+
+.conte .lab .typed::placeholder {
+    color: #cdcdcd;
+}
+
+.infor {
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    height: 73px;
+    font-weight: 500;
+}
+
+.infor:last-child {
+    margin: 0;
+    border-bottom: none;
+}
+
+.infor .txet {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.infor .txet p {
+    font-size: 13px;
+    color: var(--grey-color);
+    margin-top: 5px;
+}
+
+.infor a {
+    transition: 0.3s;
+    padding: 5px 10px;
+    border-radius: 6px;
+    background-color: var(--blue-color);
+    color: white;
+}
+
+.infor a:hover {
+    background-color: var(--blue-alt-color);
+}
+
+.infor .devices {
+    background-color: #eee;
+    color: black;
+}
+
+.infor .devices:hover {
+    background-color: #ddd;
+}
+
+.flex {
+    margin-bottom: 17px;
+    align-items: center;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.flex i {
+    width: 40px;
+    height: 40px;
+    background-color: #f6f6f6;
+    border: 1px solid #ddd;
+    border-right: none;
+    border-radius: 6px 0 0 6px;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--grey-color);
+}
+
+.flex input {
+    height: 40px;
+    background-color: #f6f6f6;
+    border: 1px solid #ddd;
+    padding-left: 10px;
+    border-radius: 0 6px 6px 0;
+    width: 100%;
+}
+
+.flex input:focus+i {
+    color: black;
+}
+
+.check {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-top: 5px;
+    padding-left: 10px;
+}
+
+.check input {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.check label {
+    padding-left: 30px;
+    cursor: pointer;
+    position: relative;
+    font-weight: 500;
+}
+
+.check label::before {
+    content: "";
+    width: 14px;
+    height: 14px;
+    border: 2px solid var(--grey-color);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -9px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.check label::after {
+    font-family: var(--fa-style-family-classic);
+    content: "\f00c";
+    font-weight: 900;
+    background-color: var(--blue-color);
+    color: white;
+    font-size: 12px;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0) rotate(360deg);
+    transition: 0.3s;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -9px;
+    border-radius: 4px;
+}
+
+.check input:hover+label::before {
+    border-color: var(--blue-color);
+}
+
+.check input:checked+label::after {
+    transform: scale(1);
+}
+
+.radio {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    margin-bottom: 17px;
+}
+
+.radio input {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.radio label {
+    padding-left: 30px;
+    position: relative;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.radio label::after {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    left: 0;
+    top: 50%;
+    margin-top: -9.2px;
+    background-color: transparent;
+    border: 2px solid var(--grey-color);
+    transition: 0.3s;
+}
+
+.radio label::before {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    left: 4.5px;
+    top: 48%;
+    margin-top: -4.2px;
+    background-color: var(--blue-color);
+    transform: scale(0);
+    transition: 0.3s;
+}
+
+.radio input:checked+label::before {
+    transform: scale(1);
+}
+
+.radio input:checked+label::after {
+    border-color: var(--blue-color);
+}
+
+.radio input:hover+label::after {
+    border-color: var(--blue-color);
+}
+
+.radio:last-child {
+    margin: 0;
+    padding-bottom: 17px;
+    border-bottom: 1px solid #eee;
+}
+
+.flx .server input {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.flx {
+    display: flex;
+    align-items: center;
+    height: 39%;
+}
+
+.flx .server {
+
+    width: 100%;
+
+    margin-right: 9.166666667px;
+}
+
+.flx .server label {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    border: 2px solid #eee;
+    position: relative;
+    border-radius: 10px;
+    margin-left: 8.166666667px;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.flx .server label i {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.flx .server input:checked+label {
+    border-color: var(--blue-color);
+    color: var(--blue-color);
+}
+
+@media (max-width:767px) {
+    .nav ul li a span {
+        display: none;
+    }
+
+    .nav ul li a {
+        width: fit-content;
+    }
+
+    .nav h3.logo {
+        font-size: 13px;
+        margin-bottom: 15px;
+    }
+
+    .nav h3.logo::after {
+        display: none;
+    }
+
+    .nav h3.logo::before {
+        display: none;
+    }
+
+    .nav {
+        width: 58px;
+        padding: 10px;
+    }
+
+    .dashcont {
+        grid-template-columns: minmax(200px, 1fr);
+        margin-left: 10px;
+        margin-right: 10px;
+        gap: 10px;
+    }
+
+    .content {
+        width: 356px;
+    }
+
+    .flx {
+        flex-direction: column;
+    }
+}
